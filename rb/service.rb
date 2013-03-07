@@ -9,7 +9,7 @@ Backend::init
 
 set :area_boundary, AreaBoundary.new
 
-set :public_folder, File.join(File.dirname(__FILE__), "../js") 
+set :public_folder, File.join(File.dirname(__FILE__), "js") 
 enable :static
 
 before do

@@ -22,12 +22,12 @@ def filter_for_uk_snow( tweets )
   found_uk_snow
 end
 
-require 'rb/backend'
+require './rb/backend'
 
 EM::run do
   EM.add_periodic_timer(30) do 
     begin
-      uk_snow_tweets = Twitter::Search.new.q("#uksnow").fetch
+      uk_snow_tweets = Twitter.search("#uksnow").results
       tweets = filter_for_uk_snow( uk_snow_tweets )
       p tweets
       Backend::store(tweets)
