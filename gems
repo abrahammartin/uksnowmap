@@ -5,3 +5,4 @@ dm-postgres-adapter
 dm-aggregates
 dm-migrations
 dm-serializer
+dm-sqlite-adapter

@@ -15,7 +15,7 @@ class Backend
   def self.init
     DataMapper.setup(
       :default, 
-      ENV['DATABASE_URL'] || 'sqlite:///Users/andrew/Dropbox/uksnow/snow.db'
+      ENV['DATABASE_URL'] || 'sqlite:///Users/abraham/tweathermap/snow.db'
     )
     DataMapper.finalize
     DataMapper.auto_upgrade!

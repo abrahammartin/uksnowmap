@@ -2,14 +2,14 @@ require 'rubygems'
 require 'sinatra'
 require 'json'
 
-require 'rb/backend'
-require 'rb/area_boundary'
+require './rb/backend'
+require './rb/area_boundary'
 
 Backend::init
 
 set :area_boundary, AreaBoundary.new
 
-set :public, File.join(File.dirname(__FILE__), "../js") 
+set :public_folder, File.join(File.dirname(__FILE__), "../js") 
 enable :static
 
 before do

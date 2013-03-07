@@ -1,1 +1,1 @@
-require 'rb/service'
+require './rb/service'
