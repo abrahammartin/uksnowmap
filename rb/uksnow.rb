@@ -9,13 +9,13 @@ SCORE_MATCHER  = /(\d{1,2})\/(\d{2})/
 def filter_for_uk_snow( tweets )
   found_uk_snow = []
   tweets.each do | t |
-    postal_district = $1 if ( t.text.match POSTAL_MATCHER )
-    score = $1 if ( t.text.match SCORE_MATCHER )
+    postal_district = t.text.match POSTAL_MATCHER
+    score = t.text.match SCORE_MATCHER
     if postal_district and score
       found_uk_snow << {
         :tw_id  => t.id_str,
-        :score  => score,
-        :postal => postal_district.upcase
+        :score  => score[0],
+        :postal => postal_district[0].upcase
       }
     end
   end
